@@ -1,0 +1,41 @@
+<div class="col-xs-12">
+    <h1><?php echo $this->competitionName; ?></h1>
+    <h3>Starter:<?php echo $this->starterCnt; ?></h3>
+    <h3>Distanz:<?php echo $this->competitionDistance; ?></h3>
+</div>
+
+<div class="col-xs-12">
+<table cellpadding="0" cellspacing="0" class="starterTable">
+        <thead>
+        <tr>
+                <th>StarterNummer</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Nation</th>
+                <th>Geschlecht</th>
+                <th>Jahrgang</th>
+                <th>Verein</th>
+                <th>Team</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+                if($this->starterCnt > 0){
+                    foreach($this->starterData as $startDate) {
+                        echo '<tr class="starterRow">
+                        <td class="starterColumn startnr">'.$startDate['startnr'].'</td>
+                        <td class="starterColumn firstname">'.$startDate['firstname'].'</td>
+                        <td class="starterColumn lastname">'.$startDate['lastname'].'</td>
+                        <td class="starterColumn nation">'.$startDate['nation'].'</td>
+                        <td class="starterColumn gender">'.$startDate['gender'].'</td>
+                        <td class="starterColumn year">'.$startDate['year'].'</td>
+                        <td class="starterColumn club">'.$startDate['club'].'</td>
+                        <td class="starterColumn team">'.$startDate['team'].'</td>
+                        </tr>
+                        ';
+                    }
+                }
+                ?>
+        </tbody>
+</table>
+</div>
